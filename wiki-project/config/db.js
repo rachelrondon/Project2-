@@ -1,9 +1,9 @@
-const pg = require('pg-promise')();
+const pgp = require('pg-promise')();
 
 const db = pgp ({
   host: "localhost",
   port: 5432,
-  database: "hotel_manager"
+  database: "wiki_website"
 });
 
 module.exports = db;
