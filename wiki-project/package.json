@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rachel Rondon",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.16.1",
     "ejs": "^2.5.6",
@@ -19,5 +19,6 @@
     "pg-promise": "^5.5.6",
     "simplesearch": "^0.1.0",
     "time-stamp": "^1.0.1"
-  }
+  },
+  "devDependencies": {}
 }
