@@ -35,9 +35,9 @@
     <form method="GET" action="/wiki/category">
       <div class="input-field">
         <select name="wiki[category]">
-          <option value="">Category</option>
-          <option <% if (wiki.category === 1) { %> selected <%} %> value="food">Food</option>
-          <option <% if (wiki.category === 1) { %> selected <%} %> value="location">Location</option>
+          <option value="Food" name="wiki[category.food]">Food</option>
+          <option value="Food" name="wiki[category.location]">Location</option>
+          <input></input>
         </select>
         <button class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Search!</button>
       </div>

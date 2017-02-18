@@ -38,7 +38,10 @@
           <form action="/wiki" method="POST">
             <!-- <label for="wiki[title]">POST Title:</label><br> -->
             <input type="text" name="wiki[title]" placeholder="Post Title!"><br>
-            <input type="text" name="wiki[category]" placeholder="Post Category!"><br>
+            <select name="wiki[category]">
+              <option name="wiki[category.food]">Food</option>
+              <option name="wiki[category.location]">Location</option>
+            </select>
             <input type="text" name="wiki[content]" placeholder="Insert Content!"><br>
             <!-- <input type="text" name="wiki[date_created]" placeholder="Date Created!"><br> -->
             <!-- <input type="text" name="wiki[date_updated]" placeholder="Date Updated!"><br> -->
