@@ -8,9 +8,8 @@ let Wiki = {};
 // };
 
 Wiki.findByCategory = (category) => {
-    console.log('*******************model',category)
-    return db.one(`
-      SELECT title, content
+    return db.manyOrNone(`
+      SELECT *
       FROM wiki
       WHERE category = $1`, [category]
     );

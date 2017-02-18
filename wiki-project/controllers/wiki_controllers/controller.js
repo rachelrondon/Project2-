@@ -20,12 +20,11 @@ controller.new = (req, res) => {
 }
 
 controller.category = (req, res) => {
-  console.log('*******************req.params.category', req.params);
   Wiki
-  .findByCategory(req.params.category)
+  .findByCategory(req.query.wiki.category)
   // req.body.wiki, req.params.id
     .then((data) => {
-      console.log(data, '*******************data')
+      console.log('*******', data)
       res.redirect('/wiki'), {
         wiki: data
   }
