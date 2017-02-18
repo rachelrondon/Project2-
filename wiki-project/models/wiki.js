@@ -7,6 +7,14 @@ let Wiki = {};
 //
 // };
 
+Wiki.findByCategory = (category) => {
+    console.log('*******************model',category)
+    return db.query(`
+      SELECT * FROM wiki
+      WHERE category = $1`, [category]
+    );
+   }
+
 Wiki.findAll = () => {
   return db.manyOrNone(`SELECT * FROM wiki`);
 }
@@ -22,10 +30,10 @@ Wiki.findById = (id) => {
 Wiki.save = (wiki) => {
   return db.query (
     `INSERT INTO wiki
-    (title, content, category)
+    (title, content, category, date_created)
     VALUES
-    ($1, $2, $3)`,
-    [wiki.title, wiki.content, wiki.category]
+    ($1, $2, $3, $4)`,
+    [wiki.title, wiki.content, wiki.category, wiki.date_created]
   );
 };
 
@@ -39,10 +47,12 @@ Wiki.update = (wiki, id) => {
     title = $1,
     content = $2,
     category = $3
-    WHERE id = $4`,
+    date_updated = $4
+    WHERE id = $5`,
     [wiki.title,
     wiki.content,
-    wiki.category, id]
+    wiki.category,
+    wiki.date_updated, id]
   );
 }
 

@@ -19,6 +19,23 @@ controller.new = (req, res) => {
 // this tells the computer to look into this folder
 }
 
+controller.category = (req, res) => {
+  console.log(req.params.category, '*******************req.params.category');
+  Wiki
+  .findByCategory(req.params.category)
+    .then((data) => {
+      console.log(data, '*******************data')
+      res.redirect('/wiki'), {
+        wiki:data[0]
+    };
+  })
+  .catch((err) => {
+    res
+    .status(400)
+    .send(err);
+  });
+}
+
 controller.create = (req, res) => {
   Wiki
   .save(req.body.wiki)

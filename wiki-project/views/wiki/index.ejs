@@ -16,6 +16,8 @@
       <script src="libraries/materialize/js/materialize.min.js"></script>
       <!-- Application JS -->
       <script src="js/app.js"></script>
+      <!--Marked SRC Tag  -->
+      <script src="lib/marked.js"></script>
   </head>
   <body>
     <nav>
@@ -30,6 +32,19 @@
             </div>
         </div>
 <!-- Below is column s6 - The middle column on the index page-->
+    <form method="GET" action="/wiki/category">
+      <div class="input-field">
+        <select name="wiki[category]">
+          <option value="">Category</option>
+          <option <% if (wiki.category === 1) { %> selected <%} %> value="food">Food</option>
+          <option <% if (wiki.category === 1) { %> selected <%} %> value="location">Location</option>
+        </select>
+        <button class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Search!</button>
+      </div>
+    </form>
+          <!-- <option value="title">Title<br> -->
+          <!-- <input id="request" type="text" placeholder="Search"></input> -->
+        <!-- </select> -->
         <div class="col s12 m4 l8">
           <% wiki.forEach(wiki => { %>
             <div class="title">
@@ -39,10 +54,10 @@
             </div>
           <% }) %>
 <!-- Below is the input (search bar) and the submit button -->
-          <form action="/wiki" method="GET">
-            <input placeholder="Search"></input>
+          <!-- <form action="/wiki" method="GET">
+            <input id="request" type="text" placeholder="Search"></input>
             <button>SUBMIT!</button>
-          </form>
+          </form> -->
           <div>
             <h2>Trending Articles</h2>
           </div>
