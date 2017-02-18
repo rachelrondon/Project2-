@@ -24,6 +24,10 @@ const app = express();
 
 app.use(logger('dev'));
 
+app.use(express.static(
+  path.join(__dirname, "public")
+));
+
 app.listen(process.env.PORT || 3000);
 
 app.set('view engine', 'ejs');

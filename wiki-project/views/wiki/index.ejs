@@ -7,15 +7,17 @@
       <title>Wiki 2.0</title>
       <!-- Materialize CSS Links -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="/libraries/materialize/css/materialize.min.css" />
-      <!-- App Styles -->
       <link rel="stylesheet" href="/css/style.css" />
-      <!-- jQuery -->
       <script src="/libraries/jquery/jquery.min.js"></script>
+      <link rel="stylesheet" href="/libraries/materialize/css/materialize.min.css" />
+      <script src="/libraries/materialize/js/materialize.min.js"></script>
+      <!-- App Styles -->
+      <!--Connecting Javascript to JQuery -->
+      <!-- jQuery -->
+      <script src="/js/app.js"></script>
       <!-- Materialize JS -->
-      <script src="libraries/materialize/js/materialize.min.js"></script>
+      <!-- <script src="./js/main.js"></script> -->
       <!-- Application JS -->
-      <script src="js/app.js"></script>
       <!--Marked SRC Tag  -->
       <script src="lib/marked.js"></script>
   </head>
@@ -32,14 +34,15 @@
             </div>
         </div>
 <!-- Below is column s6 - The middle column on the index page-->
-    <form method="GET" action="/wiki/category">
+    <form method="GET" action='/wiki/category' id="theForm">
       <div class="input-field">
-        <select name="wiki[category]">
-          <option value="Food" name="wiki[category.food]">Food</option>
-          <option value="Food" name="wiki[category.location]">Location</option>
-          <input></input>
+        <select name="wiki[category]" id="selector">
+          <option id="food-category" value="Food" name="wiki[category.food]">Food</option>
+          <option id="location-category" value="Location" name="wiki[category.location]">Location</option>
+          <!-- <input></input> -->
+          <input id="input-field" placeholder="enter"></input>
         </select>
-        <button class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Search!</button>
+        <button id="submit-button" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Search!</button>
       </div>
     </form>
           <!-- <option value="title">Title<br> -->
@@ -58,7 +61,7 @@
             <input id="request" type="text" placeholder="Search"></input>
             <button>SUBMIT!</button>
           </form> -->
-          <div>
+          <div id="results">
             <h2>Trending Articles</h2>
           </div>
  <!-- Below is the ending div for col s12 m4 l8 -->
@@ -69,5 +72,7 @@
 <!-- Below is the ending div for the row -->
       </div>
     <!-- </div> -->
+
+
   </body>
 </html>

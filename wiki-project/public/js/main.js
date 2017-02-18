@@ -1,4 +1,4 @@
-console.log('app.js connected')
+console.log('main.js connected')
 $(document).ready(function() {
   console.log('hi')
 

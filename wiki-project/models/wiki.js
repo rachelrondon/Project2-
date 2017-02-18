@@ -10,7 +10,8 @@ let Wiki = {};
 Wiki.findByCategory = (category) => {
     console.log('*******************model',category)
     return db.one(`
-      SELECT * FROM wiki
+      SELECT title, content
+      FROM wiki
       WHERE category = $1`, [category]
     );
    }
@@ -21,6 +22,7 @@ Wiki.findAll = () => {
 
 //for the edit function//
 Wiki.findById = (id) => {
+  // console.log('*************************model', id)
   return db.one(`
     SELECT * FROM wiki
     WHERE id = $1`, [id]

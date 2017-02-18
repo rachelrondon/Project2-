@@ -3,10 +3,10 @@ const Wiki = require('../../models/wiki');
 let controller = {};
 
 controller.index = (req, res) => {
+  console.log('index rendering with params', req.params)
   Wiki
   .findAll()
   .then((data) => {
-    console.log(data);
     res.render('wiki/index.ejs', {
       wiki: data
     })
@@ -20,19 +20,16 @@ controller.new = (req, res) => {
 }
 
 controller.category = (req, res) => {
-  console.log(req.params.category, '*******************req.params.category');
+  console.log('*******************req.params.category', req.params);
   Wiki
   .findByCategory(req.params.category)
+  // req.body.wiki, req.params.id
     .then((data) => {
       console.log(data, '*******************data')
       res.redirect('/wiki'), {
-        wiki:data[0]
-    };
-  })
-  .catch((err) => {
-    res
-    .status(400)
-    .send(err);
+        wiki: data
+  }
+  .catch(err => console.log('ERROR', err));
   });
 }
 
