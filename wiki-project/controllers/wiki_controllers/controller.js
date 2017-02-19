@@ -24,15 +24,17 @@ controller.new = (req, res) => {
 controller.category = (req, res) => {
   Wiki
   .findByCategory(req.params.category)
-  .then (() => {
-    if (req.query.wiki.category.food) {
-      res.redirect('/wiki/food/show')
-    }  {
-    res.redirect('/wiki')
-  }
-})
-.catch(err => console.log('ERROR:', err));
+  // .findAll()
+  .then((data => {
+    res.render('wiki/show.ejs', {
+      wiki: data
+    })
+    .catch(err => console.log('ERROR:', err));
+  }))
 }
+
+
+// }
   // .findByCategory(req.query.wiki.category)
     // .then((data) => {
     //   console.log('*******', data)

@@ -4,6 +4,8 @@ const router = require("express").Router();
 const controller = require('./controller');
 // The user is initially directed to the index page //
 router.get('/', controller.index);
+// router.get('/show', controller.show);
+
 router.get('/new', controller.new);
 router.get('/:id/edit', controller.edit);
 router.get('/:category/show', controller.category);

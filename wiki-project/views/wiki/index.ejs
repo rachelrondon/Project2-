@@ -34,14 +34,16 @@
             </div>
         </div>
 <!-- Below is column s6 - The middle column on the index page-->
-    <form method="GET" action='/' id="theForm">
+    <form method="GET" action='/category/show' id="theForm">
       <div class="input-field">
+        <!-- <% wiki.forEach(wiki => { %>
+          <p>Category:<%= wiki.category.food %></p>
+          <% }) %> -->
         <select name="wiki[category]" id="selector">
           <option id="tech-category" value="Tech" name="wiki[category.tech]">Tech</option>
           <option id="style-category" value="Style" name="wiki[category.style]">Style</option>
           <option id="food-category" value="Food" name="wiki[category.food]">Food</option>
           <option id="travel-category" value="Travel" name="wiki[category.travel]">Travel</option>
-
           <!-- <input></input> -->
           <input id="input-field" placeholder="enter"></input>
         </select>
@@ -79,4 +81,3 @@
 
   </body>
 </html>
-Contact GitHub API Training Shop Blog About
