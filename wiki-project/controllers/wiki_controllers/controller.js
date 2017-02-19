@@ -24,7 +24,6 @@ controller.new = (req, res) => {
 controller.category = (req, res) => {
   Wiki
   .findByCategory(req.params.category)
-  // .findAll()
   .then((data => {
     res.render('wiki/show.ejs', {
       wiki: data

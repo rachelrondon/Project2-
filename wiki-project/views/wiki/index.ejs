@@ -31,25 +31,32 @@
           <h1>WIKI 2.0</h1>
             <div id="top-categories">
               <h2>Top Categories</h2>
+                <div class="category-buttons">
+                  <a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki"><i class="material-icons">launch</i></a>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/tech/show"><i class="material-icons">code</i></a>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/travel/show"><i class="material-icons">my_location</i></a>
+                </div>
             </div>
         </div>
+        <!-- <button type="button" name="button"></button> -->
 <!-- Below is column s6 - The middle column on the index page-->
-    <form method="GET" action='/category/show' id="theForm">
-      <div class="input-field">
+    <!-- <form method="GET" action='wiki/<%=wiki.category %>/show' id="theForm">
+      <div class="input-field"> -->
         <!-- <% wiki.forEach(wiki => { %>
           <p>Category:<%= wiki.category.food %></p>
           <% }) %> -->
-        <select name="wiki[category]" id="selector">
-          <option id="tech-category" value="Tech" name="wiki[category.tech]">Tech</option>
-          <option id="style-category" value="Style" name="wiki[category.style]">Style</option>
-          <option id="food-category" value="Food" name="wiki[category.food]">Food</option>
-          <option id="travel-category" value="Travel" name="wiki[category.travel]">Travel</option>
+        <!-- <select name="wiki[category]" id="selector">
+          <option id="tech-category" value="tech" name="wiki[category.tech]">tech</option>
+          <option id="style-category" value="style" name="wiki[category.style]">style</option>
+          <option id="food-category" value="food" name="wiki[category.food]">food</option>
+          <option id="travel-category" value="travel" name="wiki[category.travel]">travel</option> -->
           <!-- <input></input> -->
-          <input id="input-field" placeholder="enter"></input>
-        </select>
-        <button id="submit-button" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Search!</button>
-      </div>
-    </form>
+          <!-- <input id="input-field" placeholder="enter"></input> -->
+        <!-- </select> -->
+        <!-- <button id="submit-button" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Search!</button> -->
+      <!-- </div> -->
+    <!-- </form> -->
           <!-- <option value="title">Title<br> -->
           <!-- <input id="request" type="text" placeholder="Search"></input> -->
         <!-- </select> -->

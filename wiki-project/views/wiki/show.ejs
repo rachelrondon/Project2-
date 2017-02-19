@@ -24,10 +24,12 @@
       <div class="row">
 <!--Below is col s12 m4 l2 - The fist column on the new page-->
         <div class="col s12 m4 l2">
-          <%= wiki.title %>
-          <!-- <% wiki.forEach(wiki => { %>
-            <p>Category:<%= wiki.category.food %></p>
-            <% }) %> -->
+          <!-- <%= wiki.category %> -->
+          <% wiki.forEach(wiki => { %>
+            <p>Title:<%= wiki.title %></p>
+            <p>Content:<%= wiki.content %></p>
+            <p>Date Created:<%= wiki.date_created %></p>
+            <% }) %>
           <h1>WIKI SHOW PAGE</h1>
         </div>
 <!-- Below is the ending div for the row -->
