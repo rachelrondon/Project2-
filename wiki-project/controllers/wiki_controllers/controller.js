@@ -4,6 +4,7 @@ const Wiki = require('../../models/wiki');
 let controller = {};
 
 controller.index = (req, res) => {
+  // res.render('/wiki/index.ejs')
   console.log('index rendering with params', req.params)
   Wiki
   .findAll()
