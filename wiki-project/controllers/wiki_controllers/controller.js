@@ -1,3 +1,4 @@
+
 const Wiki = require('../../models/wiki');
 
 let controller = {};
@@ -21,16 +22,25 @@ controller.new = (req, res) => {
 
 controller.category = (req, res) => {
   Wiki
-  .findByCategory(req.query.wiki.category)
-  // req.body.wiki, req.params.id
-    .then((data) => {
-      console.log('*******', data)
-      res.redirect('/wiki'), {
-        wiki: data
+  .findByCategory(req.params.category)
+  .then (() => {
+    if (req.query.wiki.category.food) {
+      res.redirect('/wiki/food/show')
+    }  {
+    res.redirect('/wiki')
   }
-  .catch(err => console.log('ERROR', err));
-  });
+})
+.catch(err => console.log('ERROR:', err));
 }
+  // .findByCategory(req.query.wiki.category)
+    // .then((data) => {
+    //   console.log('*******', data)
+    //   res.redirect('/wiki/show'), {
+    //     wiki: data
+//   }
+//   .catch(err => console.log('ERROR', err));
+//   });
+// }
 
 controller.create = (req, res) => {
   Wiki

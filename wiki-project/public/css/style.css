@@ -1,0 +1,18 @@
+#index-body {
+  display:flex;
+  /*flex-direction: column;*/
+  justify-content: space-around;
+}
+
+.index-column1 {
+  display:1;
+}
+
+.index-column2 {
+  display:2;
+  align-items: center;
+}
+
+.index-column3 {
+  display:3;
+}
