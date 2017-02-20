@@ -165,7 +165,8 @@ li {
 }
 
 #submit-edit-button {
-  width:750px;
+  width:775px;
+  padding-left:100px;
 }
 
 #edit-box {
@@ -186,4 +187,9 @@ li {
 
 #new-post-form {
   text-align: left;
+}
+
+#the-edit-button {
+  padding-left:15px;
+  padding-top:100px;
 }

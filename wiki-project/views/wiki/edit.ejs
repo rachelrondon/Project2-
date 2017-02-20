@@ -16,13 +16,6 @@
       <div class="nav-wrapper black"><h1 id="title">Edit/Delete Page</h1></div>
     </nav>
     <div class="hide-on-small-only">
-      <!-- <form>
-        <div class="input-field">
-          <input id="search" type="search" required placeholder="search bar">
-          <label id="search-icon" class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i id="close-icon" class="material-icons">close</i>
-        </div>
-      </form> -->
     <div>
     <div id="left-column">
       <ul id="dropdown1" class="dropdown-content">
@@ -57,28 +50,29 @@
           </div>
         </div>
       </div>
-      <div id="edit-box" class="card panel">
+      <div id="edit-box">
         <div class="col s12 m4 l8">
           <form method="POST" action="/wiki/<%=wiki.id %>?_method=delete">
             <button class="btn-floating btn-large waves-effect waves-light red margin-top-20" style="margin-left:10px;"><i class="material-icons">delete</i></button>
           </form>
           <form method="POST" action="/wiki/<%= wiki.id %>?_method=put">
-            <div class="card-stacked" id="edit-page-template">
-              <div class="card-content">
-                <div class="input-field">
-                  <input id="edit-title-box" type="text" name="wiki[title]" placeholder="Edit Title!"><br>
+                <div class="input-field col s12">
+                  <input id="edit-title-box" type="text" name="wiki[title]" placeholder="edit title!"><br>
                 </div>
-                <div class="input-field">
-                  <input id="edit-category-box" type="text" name="wiki[category]" placeholder="Edit Category!"><br>
-                </div>
-                <div class="input-field">
-                  <input id="edit-content-box" type="text" name="wiki[content]" placeholder="Edit Content!"><%= wiki.content %>
-                </div>
+                <div class="input-field col s12">
+                  <select name="wiki[category]">
+                    <option name="wiki[category.food]">food</option>
+                    <option name="wiki[category.tech]">tech</option>
+                    <option name="wiki[category.style]">style</option>
+                    <option name="wiki[category.travel]">travel</option>
+                  </select>
+                <div class="input-field col s12">
+                    <input id="edit-content-box" type="text" name="wiki[content]" placeholder="edit content!"><%= wiki.content %>
                </div>
             </div>
-          <div class="card-action">
-          <button id="submit-edit-button" class="waves-effect waves-light btn black" href="wiki">Submit Edit!</button>
-          </div>
+            <div id="the-edit-button" class="card-action">
+              <button id="submit-edit-button" class="btn black" href="wiki">Submit Edit!</button>
+            </div>
         </div>
       </div>
   </form>
