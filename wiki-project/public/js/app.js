@@ -2,6 +2,8 @@ console.log('app.js connected')
 $(document).ready(function() {
     $('.parallax').parallax();
     $(".dropdown-button").dropdown();
+    $('select').material_select();
+
 
   console.log('hi')
   //

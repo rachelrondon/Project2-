@@ -2,52 +2,63 @@
 <html>
   <head>
       <meta charset="utf-8">
-      <!--Mobile Device Optimization -->
-      <!-- <meta name="viewport" content="width-device-width, initial-scale=1.0"/> -->
-      <title>Wiki 2.0</title>
-      <!-- Materialize CSS Links -->
+      <title>New Post!</title>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="libraries/materialize/css/materialize.min.css" />
-      <!-- App Styles -->
       <link rel="stylesheet" href="/css/style.css" />
-      <!-- jQuery -->
       <script src="/libraries/jquery/jquery.min.js"></script>
-      <!-- Materialize JS -->
+      <link rel="stylesheet" href="/libraries/materialize/css/materialize.min.css" />
       <script src="/libraries/materialize/js/materialize.min.js"></script>
-      <!-- Application JS -->
       <script src="/js/app.js"></script>
+      <script src="lib/marked.js"></script>
   </head>
   <body>
     <nav>
+      <div class="nav-wrapper black"><h1 id="title">PITCH: NEW POST!</h1></div>
     </nav>
-    <!-- <div class="container"> -->
-      <div class="row">
-<!--Below is col s12 m4 l2 - The fist column on the new page-->
-        <div class="col s12 m4 l2">
-          <h1>WIKI 2.0</h1>
-            <div id="top-categories">
-              <h2>Top Categories</h2>
-            </div>
-        </div>
-<!-- Below is col s12 m8 l10 - The right hand column on the new page-->
-        <div class="col s12 m8 l10">
+    <div class="hide-on-small-only">
+    </div>
+    <div id="left-column">
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="/wiki/tech/show">tech</a></li>
+            <li class="divider"></li>
+            <li><a href="/wiki/travel/show">travel</a></li>
+            <li class="divider"></li>
+            <li><a href="/wiki/style/show">style</a></li>
+            <li class="divider"></li>
+            <li><a href="/wiki/food/show">food</a></li>
+          </ul>
+        <ul class="left hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">CATEGORIES<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </div>
+      <div class="row" id="new-box">
+        <div class="col s12 m4 l8">
           <header>
-            <h1>ADD NEW WIKI POST</h1>
+            <h2>NEW POST:</h2>
           </header>
-          <section>
-          <form action="/wiki" method="POST" id="new-form">
-            <!-- <label for="wiki[title]">POST Title:</label><br> -->
-            <input type="text" name="wiki[title]" placeholder="Post Title!"><br>
-            <select name="wiki[category]">
-              <option name="wiki[category.food]">food</option>
-              <option name="wiki[category.tech]">tech</option>
-              <option name="wiki[category.style]">style</option>
-              <option name="wiki[category.travel]">travel</option>
-            </select>
-            <input type="text" name="wiki[content]" placeholder="Insert Content!"><br>
-            <input type="submit" value="ADD NEW POST">
-          </form>
+            <section id="new-post-form">
+              <form action="/wiki" method="POST" id="new-form">
+                <!-- <label for="wiki[title]">POST Title:</label><br> -->
+              <div class="input-field col s12">
+                  <input type="text" name="wiki[title]"><br>
+                  <label for="title">Title</label>
+              </div>
+              <div class="input-field col s12">
+                <select name="wiki[category]">
+                  <option name="wiki[category.food]">food</option>
+                  <option name="wiki[category.tech]">tech</option>
+                  <option name="wiki[category.style]">style</option>
+                  <option name="wiki[category.travel]">travel</option>
+                </select>
+              </div>
+              <div class="input-field col s12">
+                <input type="text" name="wiki[content]"><br>
+                <label for="content">Content</label>
+              </div>
+              <input type="submit" value="ADD NEW POST">
+            </form>
           </section>
+
 <!-- Below is the ending div for the row -->
       </div>
     </div>
