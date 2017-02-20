@@ -1,9 +1,10 @@
 console.log('app.js connected')
 $(document).ready(function() {
     $('.parallax').parallax();
+    $(".dropdown-button").dropdown();
 
   console.log('hi')
-  // 
+  //
   // const $newForm = $('#new-form');
   //
   // if ($newForm.length >= 1){

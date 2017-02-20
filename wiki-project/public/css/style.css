@@ -80,9 +80,20 @@ ul {
 }
 
 .style-heading {
-  background-color:#e0e0e0;
-  color:black;
+  background-color:black;
   width:100%;
-  height:50px;
+  height:3px;
   text-align:center;
+}
+
+.page-name {
+  text-align: center;
+  font-family: helvetica;
+}
+.dropdown-content {
+  background-color: white;
+}
+
+.card-panel {
+  background-color: yellow;
 }
