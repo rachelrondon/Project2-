@@ -5,6 +5,16 @@ $(document).ready(function() {
     $('select').material_select();
     $(".context").mark("donut");
 
+// const searchButton = $('#the-search-button');
+//
+// searchButton.on('click', (e)=> {
+//   const searcBar =  $('#search').val()
+//
+//   searcBar.on('blur', (e) => {
+//
+//   });
+// });
+
 console.log('hi')
   //
   // const $newForm = $('#new-form');

@@ -57,7 +57,7 @@
           </form>
           <form method="POST" action="/wiki/<%= wiki.id %>?_method=put">
                 <div class="input-field col s12">
-                  <input id="edit-title-box" type="text" name="wiki[title]" placeholder="edit title!"><br>
+                  <input id="edit-title-box" type="text" name="wiki[title]" placeholder="edit title"><br><%= wiki.title %>
                 </div>
                 <div class="input-field col s12">
                   <select name="wiki[category]">
@@ -65,9 +65,9 @@
                     <option name="wiki[category.tech]">tech</option>
                     <option name="wiki[category.style]">style</option>
                     <option name="wiki[category.travel]">travel</option>
-                  </select>
+                  </select><%= wiki.category %>
                 <div class="input-field col s12">
-                    <input id="edit-content-box" type="text" name="wiki[content]" placeholder="edit content!"><%= wiki.content %>
+                    <input id="edit-content-box" type="text" name="wiki[content]" placeholder="edit content"><br><%= wiki.content %>
                </div>
             </div>
             <div id="the-edit-button" class="card-action">
