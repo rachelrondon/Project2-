@@ -193,3 +193,8 @@ li {
   padding-left:15px;
   padding-top:100px;
 }
+
+#show-card-panel {
+  padding-top: 50px;
+  text-align: center;
+}

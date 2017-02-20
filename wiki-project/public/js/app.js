@@ -3,16 +3,25 @@ $(document).ready(function() {
     $('.parallax').parallax();
     $(".dropdown-button").dropdown();
     $('select').material_select();
-    $(".context").mark("donut");
+    const $searchBar =  $('#search')
+    const $searchButton = $('#the-search-button');
+    // $(".context").mark("donut");
 
-// const searchButton = $('#the-search-button');
-//
+
+  // const theSearchBar = (e) => {
+  //   if ($searchBar.va() === "") {
+  //     $searchBar.addClass('empty');
+  //   } else {
+  //     $(this).val("").removeClass('empty');
+  //   }
+  // }
 // searchButton.on('click', (e)=> {
-//   const searcBar =  $('#search').val()
-//
-//   searcBar.on('blur', (e) => {
-//
-//   });
+//   // searBar.querySelecrtor(searchBar);
+//   console.log(searcBar);
+
+  // searcBar.on('blur', (e) => {
+
+  // });
 // });
 
 console.log('hi')

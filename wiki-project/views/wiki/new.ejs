@@ -13,7 +13,7 @@
   </head>
   <body>
     <nav>
-      <div class="nav-wrapper black"><h1 id="title">PITCH: NEW POST!</h1></div>
+      <div class="nav-wrapper black"><h1 id="title">NEW POST!</h1></div>
     </nav>
     <div class="hide-on-small-only">
     </div>
@@ -38,23 +38,20 @@
               <i class="material-icons">menu</i>
             </a>
             <ul>
-              <li><a class="btn-floating black" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
+              <li><a class="btn-floating teal lighten-3" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
               <li><a class="btn-floating black" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
-              <li><a class="btn-floating black" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+              <li><a class="btn-floating teal lighten-3" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
               <li><a class="btn-floating black" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
-              <li><a class="btn-floating black" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
+              <li><a class="btn-floating teal lighten-3" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
               <li><a class="btn-floating black" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
             </ul>
           </div>
-          <header>
-            <h2>NEW POST:</h2>
-          </header>
             <section id="new-post-form">
               <form action="/wiki" method="POST" id="new-form">
                 <!-- <label for="wiki[title]">POST Title:</label><br> -->
               <div class="input-field col s12">
                   <input type="text" name="wiki[title]"><br>
-                  <label for="title">Title</label>
+                  <label for="title">title</label>
               </div>
               <div class="input-field col s12">
                 <select name="wiki[category]">
@@ -66,9 +63,9 @@
               </div>
               <div class="input-field col s12">
                 <input type="text" name="wiki[content]"><br>
-                <label for="content">Content</label>
+                <label for="content">content</label>
               </div>
-              <input type="submit" value="ADD NEW POST">
+              <input class="teal lighten-3" type="submit" value="add new post">
             </form>
           </section>
 
