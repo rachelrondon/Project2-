@@ -1,6 +1,23 @@
 console.log('app.js connected')
 $(document).ready(function() {
+    $('.parallax').parallax();
+
   console.log('hi')
+  // 
+  // const $newForm = $('#new-form');
+  //
+  // if ($newForm.length >= 1){
+  //   var dateInput = $newForm.find('input[type=hidden]');
+  //   dateInput.val(new Date());
+  }
+  // $newForm.on('submit', (e) => {
+  //
+  // });
+  //
+  // const getDate = () => {
+  //   let date = new Date();
+  //   console.log(this)
+  // }
 
 // const $selector = $('.selector');
 // const $foodCategory = $('.food-category');
