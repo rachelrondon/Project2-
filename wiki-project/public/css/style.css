@@ -159,3 +159,27 @@ li {
 .dropdown-button {
   padding-left: 100px;
 }
+
+#edit-page-template {
+  text-align: left;
+}
+
+#submit-edit-button {
+  width:750px;
+}
+
+#edit-box {
+ align-items: center;
+}
+
+#edit-title-box {
+  text-align: left;
+}
+
+#edit-category-box {
+  text-align: left;
+}
+
+#edit-content-box {
+  text-align: left;
+}

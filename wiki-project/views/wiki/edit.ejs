@@ -2,62 +2,85 @@
 <html>
   <head>
       <meta charset="utf-8">
-
-      <!--Mobile Device Optimization -->
-      <!-- <meta name="viewport" content="width-device-width, initial-scale=1.0"/> -->
-
       <title>Wiki 2.0!</title>
-
-      <!-- Materialize CSS Links -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="libraries/materialize/css/materialize.min.css" />
-      <!-- App Styles -->
       <link rel="stylesheet" href="/css/style.css" />
-      <!-- jQuery -->
       <script src="/libraries/jquery/jquery.min.js"></script>
-      <!-- Materialize JS -->
+      <link rel="stylesheet" href="/libraries/materialize/css/materialize.min.css" />
       <script src="/libraries/materialize/js/materialize.min.js"></script>
-      <!-- Application JS -->
       <script src="/js/app.js"></script>
+      <script src="lib/marked.js"></script>
   </head>
   <body>
     <nav>
+      <div class="nav-wrapper black"><h1 id="title">Edit/Delete Page</h1></div>
     </nav>
-    <header>
-      <h1>EDIT WIKI POST</h1>
-    </header>
-<!--Below is the beginning of the container  -->
-   <div class="container">
-    <div class="row">
-      <div class="col s12">
-        <div class="card horizontal">
-
-      <form method="POST" action="/wiki/<%=wiki.id %>?_method=delete">
-        <button class="btn-floating btn-large waves-effect waves-light red margin-top-20" style="margin-left:10px;"><i class="material-icons">delete</i></button>
-      </form>
-<!-- <main> -->
-    <!--This triggers the modal  -->
-  <a class="waves-effect waves-light btn" href="#modal1">Modal</a>
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-
-        <form method="POST" action="/wiki/<%= wiki.id %>?_method=put">
-          <div class="card-stacked">
-            <div class="card-content">
-              <div class="input-field">
-                <input type="text" name="wiki[title]" placeholder="Edit Title!"><br>
-              </div>
-              <div class="input-field">
-                <input type="text" name="wiki[category]" placeholder="Edit Category!"><br>
-              </div>
-              <div class="input-field">
-                <input type="text" name="wiki[content]" placeholder="Insert Content!"><%= wiki.content %>
-              </div>
-      </div>
-      <div class="card-action">
-        <button class="waves-effect waves-light btn" href="wiki">Submit Edit!</button>
-      </div>
+    <div class="hide-on-small-only">
+      <!-- <form>
+        <div class="input-field">
+          <input id="search" type="search" required placeholder="search bar">
+          <label id="search-icon" class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i id="close-icon" class="material-icons">close</i>
+        </div>
+      </form> -->
+    <div>
+    <div id="left-column">
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/wiki/tech/show">tech</a></li>
+        <li class="divider"></li>
+        <li><a href="/wiki/travel/show">travel</a></li>
+        <li class="divider"></li>
+        <li><a href="/wiki/style/show">style</a></li>
+        <li class="divider"></li>
+        <li><a href="/wiki/food/show">food</a></li>
+      </ul>
+      <ul class="left hide-on-med-and-down">
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">CATEGORIES<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
     </div>
+    <div class="row" id="edit-box">
+      <div class="col s12 m4 l2">
+        <div id="top-categories">
+
+          <div class="fixed-action-btn horizontal click-to-toggle">
+            <a class="btn-floating btn-large black">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul>
+              <li><a class="btn-floating black" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
+              <li><a class="btn-floating black" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
+              <li><a class="btn-floating black" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+              <li><a class="btn-floating black" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
+              <li><a class="btn-floating black" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
+              <li><a class="btn-floating black" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="edit-box" class="card vertical">
+        <div class="col s12 m4 l8">
+          <form method="POST" action="/wiki/<%=wiki.id %>?_method=delete">
+            <button class="btn-floating btn-large waves-effect waves-light red margin-top-20" style="margin-left:10px;"><i class="material-icons">delete</i></button>
+          </form>
+          <form method="POST" action="/wiki/<%= wiki.id %>?_method=put">
+            <div class="card-stacked" id="edit-page-template">
+              <div class="card-content">
+                <div class="input-field">
+                  <input id="edit-title-box" type="text" name="wiki[title]" placeholder="Edit Title!"><br>
+                </div>
+                <div class="input-field">
+                  <input id="edit-category-box" type="text" name="wiki[category]" placeholder="Edit Category!"><br>
+                </div>
+                <div class="input-field">
+                  <input id="edit-content-box" type="text" name="wiki[content]" placeholder="Edit Content!"><%= wiki.content %>
+                </div>
+               </div>
+            </div>
+          <div class="card-action">
+          <button id="submit-edit-button" class="waves-effect waves-light btn black" href="wiki">Submit Edit!</button>
+          </div>
+        </div>
+      </div>
   </form>
   </body>
 </html>

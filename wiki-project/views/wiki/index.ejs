@@ -2,23 +2,14 @@
 <html>
   <head>
       <meta charset="utf-8">
-      <!--Mobile Device Optimization -->
-      <!-- <meta name="viewport" content="width-device-width, initial-scale=1.0"/> -->
+
       <title>PITCH!</title>
-      <!-- Materialize CSS Links -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="/css/style.css" />
       <script src="/libraries/jquery/jquery.min.js"></script>
       <link rel="stylesheet" href="/libraries/materialize/css/materialize.min.css" />
       <script src="/libraries/materialize/js/materialize.min.js"></script>
-      <!-- App Styles -->
-      <!--Connecting Javascript to JQuery -->
-      <!-- jQuery -->
       <script src="/js/app.js"></script>
-      <!-- Materialize JS -->
-      <!-- <script src="./js/main.js"></script> -->
-      <!-- Application JS -->
-      <!--Marked SRC Tag  -->
       <script src="lib/marked.js"></script>
   </head>
   <body>
@@ -44,15 +35,12 @@
             <li class="divider"></li>
             <li><a href="/wiki/food/show">food</a></li>
           </ul>
-        <!-- </div> -->
         <ul class="left hide-on-med-and-down">
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1">CATEGORIES<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
-
-      <!-- </div> -->
     </div>
     <!-- <div class="container"> -->
-      <div class="row" id="#index-box">
+      <div class="row" id="index-box">
         <div class="col s12 m4 l2">
           <!-- <h1>PITCH!</h1> -->
             <div id="top-categories">
@@ -62,9 +50,6 @@
                     <i class="material-icons">menu</i>
                   </a>
                   <ul>
-                    <!-- <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki"><i class="material-icons">navigation</i></a></li>
-                    <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
-                    <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/tech/show"><i class="material-icons">code</i></a></li> -->
                     <li><a class="btn-floating black" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
                     <li><a class="btn-floating black" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
                     <li><a class="btn-floating black" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
@@ -75,27 +60,6 @@
                 </div>
             </div>
         </div>
-        <!-- <button type="button" name="button"></button> -->
-<!-- Below is column s6 - The middle column on the index page-->
-    <!-- <form method="GET" action='wiki/<%=wiki.category %>/show' id="theForm">
-      <div class="input-field"> -->
-        <!-- <% wiki.forEach(wiki => { %>
-          <p>Category:<%= wiki.category.food %></p>
-          <% }) %> -->
-        <!-- <select name="wiki[category]" id="selector">
-          <option id="tech-category" value="tech" name="wiki[category.tech]">tech</option>
-          <option id="style-category" value="style" name="wiki[category.style]">style</option>
-          <option id="food-category" value="food" name="wiki[category.food]">food</option>
-          <option id="travel-category" value="travel" name="wiki[category.travel]">travel</option> -->
-          <!-- <input></input> -->
-          <!-- <input id="input-field" placeholder="enter"></input> -->
-        <!-- </select> -->
-        <!-- <button id="submit-button" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Search!</button> -->
-      <!-- </div> -->
-    <!-- </form> -->
-          <!-- <option value="title">Title<br> -->
-          <!-- <input id="request" type="text" placeholder="Search"></input> -->
-        <!-- </select> -->
         <div class="col s12 m4 l8">
           <% wiki.forEach(wiki => { %>
             <div class="card-panel">
@@ -105,30 +69,16 @@
             <div class="date-created">
               <p>Created At:<%= wiki.date_created %></p>
             </div>
-            <!-- <div class="card-reveal"> -->
                 <p>Category:<%= wiki.category %></p>
                 <p> Content:<%= wiki.content %></p>
-                <i class="material-icons">grade</i>
-            <!-- </div> -->
+                <i class="material-icons yellow lighten-4">grade</i>
+                <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons">mode_edit</i></a>
+
+              <!-- <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons">mode_edit</i></a> -->
+
           </div>
           <% }) %>
-<!-- Below is the input (search bar) and the submit button -->
-          <!-- <form action="/wiki" method="GET">
-            <input id="request" type="text" placeholder="Search"></input>
-            <button>SUBMIT!</button>
-          </form> -->
-          <!-- <div id="results">
-            <h2>Trending Articles</h2>
-          </div> -->
- <!-- Below is the ending div for col s12 m4 l8 -->
         </div>
-        <!-- <div class="col s12 m4 l2">
-          <p>Trending Ideas:</p>
-        </div> -->
-<!-- Below is the ending div for the row -->
       </div>
-    <!-- </div> -->
-
-
   </body>
 </html>
