@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <!--Mobile Device Optimization -->
       <!-- <meta name="viewport" content="width-device-width, initial-scale=1.0"/> -->
-      <title>Wiki 2.0</title>
+      <title>PITCH!</title>
       <!-- Materialize CSS Links -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="/css/style.css" />
@@ -23,23 +23,54 @@
   </head>
   <body>
     <nav>
+      <div class="nav-wrapper black"><h1 id="title">Pitch: Idea Board</h1></div>
     </nav>
+    <div class="hide-on-small-only">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required placeholder="search bar">
+          <label id="search-icon" class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i id="close-icon" class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+    <div id="left-column">
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="/wiki/tech/show">tech</a></li>
+            <li class="divider"></li>
+            <li><a href="/wiki/travel/show">travel</a></li>
+            <li class="divider"></li>
+            <li><a href="/wiki/style/show">style</a></li>
+            <li class="divider"></li>
+            <li><a href="/wiki/food/show">food</a></li>
+          </ul>
+        <!-- </div> -->
+        <ul class="left hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">CATEGORIES<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
 
+      <!-- </div> -->
+    </div>
     <!-- <div class="container"> -->
       <div class="row" id="#index-box">
         <div class="col s12 m4 l2">
-          <h1>WIKI 2.0</h1>
+          <!-- <h1>PITCH!</h1> -->
             <div id="top-categories">
-              <h2>Top Categories</h2>
+              <!-- <p>Top Ideas:</p> -->
                 <div class="fixed-action-btn horizontal click-to-toggle">
-                  <a class="btn-floating btn-large red">
+                  <a class="btn-floating btn-large black">
                     <i class="material-icons">menu</i>
                   </a>
                   <ul>
-                    <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki"><i class="material-icons">launch</i></a></li>
+                    <!-- <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki"><i class="material-icons">navigation</i></a></li>
                     <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
-                    <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
-                    <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+                    <li><a class="btn-floating halfway-fab waves-effect waves-light red" href="/wiki/tech/show"><i class="material-icons">code</i></a></li> -->
+                    <li><a class="btn-floating black" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
+                    <li><a class="btn-floating black" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
+                    <li><a class="btn-floating black" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+                    <li><a class="btn-floating black" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
+                    <li><a class="btn-floating black" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
+                    <li><a class="btn-floating black" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
                   </ul>
                 </div>
             </div>
@@ -67,27 +98,33 @@
         <!-- </select> -->
         <div class="col s12 m4 l8">
           <% wiki.forEach(wiki => { %>
-            <div class="title">
+            <div class="card-panel">
+            <div class="card-content">
                 <p>Title:<%= wiki.title %></p>
-                <p>Category:<%= wiki.category %></p>
-                <p>Content:<%= wiki.content %></p>
-                <p>Created At:<%= wiki.date_created %></p>
-
             </div>
+            <div class="date-created">
+              <p>Created At:<%= wiki.date_created %></p>
+            </div>
+            <!-- <div class="card-reveal"> -->
+                <p>Category:<%= wiki.category %></p>
+                <p> Content:<%= wiki.content %></p>
+                <i class="material-icons">grade</i>
+            <!-- </div> -->
+          </div>
           <% }) %>
 <!-- Below is the input (search bar) and the submit button -->
           <!-- <form action="/wiki" method="GET">
             <input id="request" type="text" placeholder="Search"></input>
             <button>SUBMIT!</button>
           </form> -->
-          <div id="results">
+          <!-- <div id="results">
             <h2>Trending Articles</h2>
-          </div>
+          </div> -->
  <!-- Below is the ending div for col s12 m4 l8 -->
         </div>
-        <div class="col s12 m4 l2">
-          <p>Saved Categories</p>
-        </div>
+        <!-- <div class="col s12 m4 l2">
+          <p>Trending Ideas:</p>
+        </div> -->
 <!-- Below is the ending div for the row -->
       </div>
     <!-- </div> -->

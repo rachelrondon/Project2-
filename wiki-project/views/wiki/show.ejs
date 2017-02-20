@@ -24,7 +24,7 @@
         <div class="nav-wrapper">
           <div class="hide-on-small-only">
           <ul id="dropdown1" class="dropdown-content">
-            <li><a href="/wiki">launch</a></li>
+            <li class="launch-drop-down"><a href="/wiki">launch</a></li>
             <li><a href="/wiki/style/show">style</a></li>
             <li><a href="/wiki/travel/show">travel</a></li>
           </ul>
@@ -35,32 +35,45 @@
           </div>
         </div>
       </nav>
-      <div class="page-name">Pitch'd: Style</div>
+      <!-- <div class="page-name">Pitch'd: Style</div> -->
       <div class="style-heading"></div>
+      <!-- <div class="col s12"> -->
     <div class="row">
+      <!--Below is the column for the left container  -->
+      <!-- <div class="col s12"> -->
     <!-- <div class="container"> -->
       <div class="col s12">
+        <div class="top-stories">
+        </div>
         <div class="card">
       <div class="show-input">
         <div class="row container">
            <div class="card-panel">
           <!-- <%= wiki.category %> -->
           <% wiki.forEach(wiki => { %>
+            <!--This contains the card title  -->
             <div class="card-content">
             <span class="white-text">Title:<%= wiki.title %></span>
             </div>
+            <div class="date-created"
+              <span class="white-text">Date Created:<%= wiki.date_created %></span>
+            </div>
+            <!--This contains the card content  -->
             <div class="card-reveal">
               <!-- <span class="card-title grey-text text-darken-4"> -->
+              <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons">mode_edit</i></a>
               <span class="card-title grey-text text-darken-4">Content:<%= wiki.content %></span>
-              <span class="white-text">Date Created:<%= wiki.date_created %></span>
+            </div>
             <% }) %>
            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
 <!-- Below is the ending div for the row -->
     </div>
+    <div class="style-footer"></div>
   </body>
 </html>

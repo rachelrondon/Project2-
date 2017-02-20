@@ -10,7 +10,7 @@ $(document).ready(function() {
   // if ($newForm.length >= 1){
   //   var dateInput = $newForm.find('input[type=hidden]');
   //   dateInput.val(new Date());
-  }
+  // }
   // $newForm.on('submit', (e) => {
   //
   // });
