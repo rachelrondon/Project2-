@@ -47,7 +47,7 @@ Wiki.update = (wiki, id) => {
     `UPDATE wiki SET
     title = $1,
     content = $2,
-    category = $3
+    category = $3,
     date_updated = $4
     WHERE id = $5`,
     [wiki.title,

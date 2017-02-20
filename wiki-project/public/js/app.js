@@ -3,9 +3,9 @@ $(document).ready(function() {
     $('.parallax').parallax();
     $(".dropdown-button").dropdown();
     $('select').material_select();
+    $(".context").mark("donut");
 
-
-  console.log('hi')
+console.log('hi')
   //
   // const $newForm = $('#new-form');
   //

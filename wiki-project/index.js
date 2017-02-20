@@ -4,6 +4,8 @@ const path            = require('path');
 const bodyParser      = require('body-parser');
 const methodOverride  = require('method-override');
 const time            = require('express-timestamp');
+const marked          = require('marked');
+console.log(marked('I am using _markdown_.'));
 // const marked          = require('marked');
 // const markdownString = '```js\n console.log("hello"); \n```';
 // const SimpleSearch    = require('simplesearch');
