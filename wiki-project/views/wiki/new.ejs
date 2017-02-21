@@ -13,7 +13,7 @@
   </head>
   <body>
     <nav>
-      <div class="nav-wrapper black"><h1 id="title">NEW POST!</h1></div>
+      <div class="nav-wrapper teal teal darken-3"><h1 id="title">NEW POST!</h1></div>
     </nav>
     <div class="hide-on-small-only">
     </div>
@@ -34,16 +34,16 @@
       <div class="row" id="new-box">
         <div class="col s12 m4 l8">
           <div class="fixed-action-btn horizontal click-to-toggle">
-            <a class="btn-floating btn-large black">
+            <a class="btn-floating btn-large teal darken-3">
               <i class="material-icons">menu</i>
             </a>
             <ul>
               <li><a class="btn-floating teal lighten-3" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
-              <li><a class="btn-floating black" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
+              <li><a class="btn-floating teal darken-3" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
               <li><a class="btn-floating teal lighten-3" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
-              <li><a class="btn-floating black" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
+              <li><a class="btn-floating teal darken-3" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
               <li><a class="btn-floating teal lighten-3" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
-              <li><a class="btn-floating black" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
+              <li><a class="btn-floating teal darken-3" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
             </ul>
           </div>
             <section id="new-post-form">
@@ -62,10 +62,14 @@
                 </select>
               </div>
               <div class="input-field col s12">
+                <input type="text" name="wiki[date_created]"><br>
+                <label for="date_created">date created</label>
+              </div>
+              <div class="input-field col s12">
                 <input type="text" name="wiki[content]"><br>
                 <label for="content">content</label>
               </div>
-              <input class="teal lighten-3" type="submit" value="add new post">
+              <input class="teal darken-3" type="submit" value="add new post">
             </form>
           </section>
 

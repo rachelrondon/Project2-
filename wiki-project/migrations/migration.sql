@@ -4,5 +4,6 @@ CREATE TABLE wiki
 title VARCHAR(255),
 content VARCHAR(255),
 category VARCHAR(255),
-date_created DATE,
-date_updated DATE);
+date_created TIMESTAMP,
+date_updated TIMESTAMP,
+likes INTEGER DEFAULT 0);

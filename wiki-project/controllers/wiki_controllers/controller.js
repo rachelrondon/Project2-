@@ -1,7 +1,6 @@
-
-const Wiki = require('../../models/wiki');
-
-let controller = {};
+const Wiki          = require('../../models/wiki');
+let controller      = {};
+const timestamp     = require('time-stamp');
 
 controller.index = (req, res) => {
   // res.render('/wiki/index.ejs')
@@ -45,8 +44,10 @@ controller.category = (req, res) => {
 // }
 
 controller.create = (req, res) => {
+  let date = timestamp();
+  let date_created = date.split(':').join('-')
   Wiki
-  .save(req.body.wiki)
+  .save(req.body.wiki, date_created)
   .then(() => res.redirect('/wiki'))
 // this tells the computer to go to this URL
   .catch(err => console.log('ERROR', err));
@@ -81,5 +82,18 @@ controller.destroy = (req, res) => {
     .send(err);
   });
 }
+
+// controller.like = (req, res) => {
+//   Gif
+//     .like(req.params.id)
+//     .then(() => {
+//       if (req.query.show) {
+//         res.redirect(`/wiki/${req.params.id}`)
+//       } else {
+//         res.redirect('/gif')
+//       }
+//     })
+//     .catch(err => console.log('ERROR:', err));
+// }
 
 module.exports = controller;

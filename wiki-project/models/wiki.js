@@ -6,6 +6,15 @@ let Wiki = {};
 //   return db.manyOrNone(`SELECT * FROM wiki`);
 //
 // };
+// Wiki.findByDate_updated = (date_updated) => {
+//     return db.manyOrNone(`
+//       SELECT *
+//       FROM wiki
+//       WHERE date_updated = $1`, [date_updated]
+//     );
+// }
+
+// Can I re-drop the table and then select the time from the database?
 
 Wiki.findByCategory = (category) => {
     return db.manyOrNone(`
@@ -28,13 +37,13 @@ Wiki.findById = (id) => {
   );
 }
 
-Wiki.save = (wiki) => {
+Wiki.save = (wiki, date_created) => {
   return db.query (
     `INSERT INTO wiki
     (title, content, category, date_created)
     VALUES
     ($1, $2, $3, $4)`,
-    [wiki.title, wiki.content, wiki.category, wiki.date_created]
+    [wiki.title, wiki.content, wiki.category, date_created]
   );
 };
 
@@ -60,6 +69,5 @@ Wiki.update = (wiki, id) => {
 Wiki.destroy = (id) => {
   return db.query('DELETE FROM wiki WHERE id = $1', [id]);
 }
-
 
 module.exports = Wiki;

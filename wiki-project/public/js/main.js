@@ -9,6 +9,8 @@ const $submitButton = $('.submit-button');
 const $results = $('.results');
 const $theForm = $('.theForm');
 
+$('#contents').innerHTML = marked('# Marked in browser\n\nRendered by **marked**.');
+
 // let whichAction = $selector.val();
 // theForm.attr('action', `/wiki/category/${whichAction}`)
 
