@@ -131,7 +131,8 @@ a {
 
 #title {
   color:white;
-  align-items: center;
+  text-align:left;
+  padding-left:-40;
 }
 
 li {

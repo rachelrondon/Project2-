@@ -5,8 +5,17 @@ $(document).ready(function() {
     $('select').material_select();
     const $searchBar =  $('#search')
     const $searchButton = $('#the-search-button');
+    materialize.toast('I am a toast!', 4000);
     // $(".context").mark("donut");
 
+let timeInMs = Date.now();
+
+if (!Date.now) {
+  Date.now = function now() {
+    return new Date().getTime();
+    console.log(Date.now)
+  };
+}
 
   // const theSearchBar = (e) => {
   //   if ($searchBar.va() === "") {
