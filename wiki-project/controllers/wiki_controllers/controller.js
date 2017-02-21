@@ -44,8 +44,8 @@ controller.category = (req, res) => {
 // }
 
 controller.create = (req, res) => {
-  let date = timestamp();
-  let date_created = date.split(':').join('-')
+  let time = timestamp();
+  let date_created = time.split(':').join('-')
   Wiki
   .save(req.body.wiki, date_created)
   .then(() => res.redirect('/wiki'))
@@ -83,17 +83,17 @@ controller.destroy = (req, res) => {
   });
 }
 
-// controller.like = (req, res) => {
-//   Gif
-//     .like(req.params.id)
-//     .then(() => {
-//       if (req.query.show) {
-//         res.redirect(`/wiki/${req.params.id}`)
-//       } else {
-//         res.redirect('/gif')
-//       }
-//     })
-//     .catch(err => console.log('ERROR:', err));
-// }
+controller.like = (req, res) => {
+  Gif
+    .like(req.params.id)
+    .then(() => {
+      if (req.query.show) {
+        res.redirect(`/wiki/${req.params.id}`)
+      } else {
+        res.redirect('/wiki')
+      }
+    })
+    .catch(err => console.log('ERROR:', err));
+}
 
 module.exports = controller;

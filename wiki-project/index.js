@@ -3,7 +3,7 @@ const logger          = require('morgan');
 const path            = require('path');
 const bodyParser      = require('body-parser');
 const methodOverride  = require('method-override');
-const timestamp            = require('time-stamp');
+const timestamp       = require('time-stamp');
 const marked          = require('marked');
 console.log(marked('I am using _markdown_.'));
 // const marked          = require('marked');
@@ -39,12 +39,5 @@ app.set('views', './views');
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(methodOverride('_method'));
-
-// app.use(time.init);
-
-// app.get('/', function (req, res) {
-//   var moment = req.timestamp
-//   console.log(moment.tz("America/Mexico_City")).format();
-// })
 
 app.use(require('./resources'));
