@@ -70,4 +70,12 @@ Wiki.destroy = (id) => {
   return db.query('DELETE FROM wiki WHERE id = $1', [id]);
 }
 
+Wiki.like = (id) => {
+  return db.none(`
+    UPDATE wiki
+    SET likes = likes + 1
+    WHERE id = $1`,
+    [id]
+  );
+}
 module.exports = Wiki;
