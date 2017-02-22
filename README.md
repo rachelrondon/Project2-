@@ -18,9 +18,6 @@ Wireframes:
 
 Modules:
 Express: Node.js server
-Morgan: Middleware
 Materialize: Templates & CSS attributes
 EJS: Used for Javascript templates
-Path: Connects the server to the public folder which contains the CSS and library folders.
 Method-Override: Put and delete requests
-PG-Promise
