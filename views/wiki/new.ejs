@@ -24,8 +24,6 @@
         </ul>
         </div>
       </nav>
-    <div class="hide-on-small-only">
-    </div>
       <div class="row" id="new-box">
         <div class="col s12 m4 l12">
           <div class="fixed-action-btn horizontal click-to-toggle">
@@ -43,25 +41,25 @@
           </div>
             <section id="new-post-form">
               <form action="/wiki" method="POST" id="new-form">
-              <div class="input-field col s12">
-                  <input id="title-input-field" type="text" name="wiki[title]"><br>
-                  <label for="title">title</label>
-              </div>
-              <div class="input-field col s12">
-                <select name="wiki[category]">
-                  <option name="wiki[category.food]">food</option>
-                  <option name="wiki[category.tech]">tech</option>
-                  <option name="wiki[category.style]">style</option>
-                  <option name="wiki[category.travel]">travel</option>
-                </select>
-              </div>
-              <div class="input-field col s12">
-                <input type="text" name="wiki[content]"><br>
-                <label for="content">content</label>
-              </div>
-                  <input id="new-post-submit-button" class="indigo darken-4 white-text" type="submit" value="add new post">
-                </form>
-          </section>
+                <div class="input-field col s12">
+                    <input id="title-input-field" type="text" name="wiki[title]"><br>
+                    <label for="title">title</label>
+                </div>
+                <div class="input-field col s12">
+                  <select name="wiki[category]">
+                    <option name="wiki[category.food]">food</option>
+                    <option name="wiki[category.tech]">tech</option>
+                    <option name="wiki[category.style]">style</option>
+                    <option name="wiki[category.travel]">travel</option>
+                  </select>
+                </div>
+                <div class="input-field col s12">
+                  <input type="text" name="wiki[content]"><br>
+                  <label for="content">content</label>
+                </div>
+                    <input id="new-post-submit-button" class="indigo darken-4 white-text" type="submit" value="add new post">
+             </form>
+           </section>
       </div>
     </div>
   </body>
