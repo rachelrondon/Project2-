@@ -47,14 +47,14 @@
       <% wiki.forEach(wiki => { %>
         <div id="show-card-panel" class="card-panel indigo lighten-5">
         <div class="card-content">
-          <p>Title:<%= wiki.title %></p>
+          <p>Title: <%= wiki.title %></p>
         </div>
         <div class="date-created">
           <% console.log(typeof `${wiki.date_created}`) %>
           <p>Date Created: <%= `${wiki.date_created}`.slice(0,10) %></p>
         </div>
-          <p>Category:<%= wiki.category %></p>
-          <p> Content:<%= wiki.content %></p>
+          <p>Category: <%= wiki.category %></p>
+          <p> Content: <%= wiki.content %></p>
           <i class="material-icons indigo lighten-3">grade</i>
           <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons indigo lighten-3">mode_edit</i></a>
         </div>
