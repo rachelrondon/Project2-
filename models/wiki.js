@@ -2,20 +2,6 @@ const db = require('../config/db');
 
 let Wiki = {};
 
-// Wiki.findAll = () => {
-//   return db.manyOrNone(`SELECT * FROM wiki`);
-//
-// };
-// Wiki.findByDate_updated = (date_updated) => {
-//     return db.manyOrNone(`
-//       SELECT *
-//       FROM wiki
-//       WHERE date_updated = $1`, [date_updated]
-//     );
-// }
-
-// Can I re-drop the table and then select the time from the database?
-
 Wiki.findByCategory = (category) => {
     return db.manyOrNone(`
       SELECT *
@@ -23,6 +9,14 @@ Wiki.findByCategory = (category) => {
       WHERE category = $1`, [category]
     );
    }
+   Wiki.search = (text) => {
+     // console.log(text);
+     return db.manyOrNone(`
+       SELECT *
+       FROM wiki
+       WHERE title LIKE $1
+       `, [`%${text}%`])
+     }
 
 Wiki.findAll = () => {
   return db.manyOrNone(`SELECT * FROM wiki`);
@@ -70,12 +64,14 @@ Wiki.destroy = (id) => {
   return db.query('DELETE FROM wiki WHERE id = $1', [id]);
 }
 
-Wiki.like = (id) => {
-  return db.none(`
-    UPDATE wiki
-    SET likes = likes + 1
-    WHERE id = $1`,
-    [id]
-  );
-}
+// Wiki.like = (id) => {
+//   return db.none(`
+//     UPDATE wiki
+//     SET likes = likes + 1
+//     WHERE id = $1`,
+//     [id]
+//   );
+// }
+
+
 module.exports = Wiki;

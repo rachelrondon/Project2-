@@ -31,17 +31,18 @@ controller.category = (req, res) => {
   }))
 }
 
+// text = req.query.search // = search bar input // search -> req.query.search -> text
+controller.search = (req, res) => {
+  Wiki
+  .search(req.params.search)
+  .then((text) =>{
+    res.render('wiki/show.ejs', {
+      wiki:text
+    })
+  });
+  console.log('hallo', req.query)
+}
 
-// }
-  // .findByCategory(req.query.wiki.category)
-    // .then((data) => {
-    //   console.log('*******', data)
-    //   res.redirect('/wiki/show'), {
-    //     wiki: data
-//   }
-//   .catch(err => console.log('ERROR', err));
-//   });
-// }
 
 controller.create = (req, res) => {
   let time = timestamp();
@@ -84,16 +85,17 @@ controller.destroy = (req, res) => {
 }
 
 controller.like = (req, res) => {
-  Gif
+  Wiki
     .like(req.params.id)
     .then(() => {
       if (req.query.show) {
-        res.redirect(`/wiki/${req.params.id}`)
+        res.redirect('/wiki')
       } else {
         res.redirect('/wiki')
       }
-    })
+  })
     .catch(err => console.log('ERROR:', err));
 }
+
 
 module.exports = controller;

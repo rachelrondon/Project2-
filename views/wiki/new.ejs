@@ -13,11 +13,20 @@
   </head>
   <body>
     <nav>
-      <div class="nav-wrapper teal teal darken-3"><h1 id="title">NEW POST!</h1></div>
-    </nav>
+      <div class="nav-wrapper indigo darken-4">
+        <ul class="center hide-on-med-and-down">
+          <a href="/wiki/new" class="left hide-on-med-and-down" class="brand-logo">NEW POST</a>
+          <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
+          <li><a class="btn-floating indigo darken-4" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
+          <li><a class="btn-floating indigo darken-4" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+          <li><a class="btn-floating indigo darken-4" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
+          <li><a class="btn-floating indigo darken-4" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
+        </ul>
+        </div>
+      </nav>
     <div class="hide-on-small-only">
     </div>
-    <div id="left-column">
+    <!-- <div id="left-column">
           <ul id="dropdown1" class="dropdown-content">
             <li><a href="/wiki/tech/show">tech</a></li>
             <li class="divider"></li>
@@ -30,27 +39,27 @@
         <ul class="left hide-on-med-and-down">
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1">CATEGORIES<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
-    </div>
+    </div> -->
       <div class="row" id="new-box">
-        <div class="col s12 m4 l8">
+        <div class="col s12 m4 l12">
           <div class="fixed-action-btn horizontal click-to-toggle">
-            <a class="btn-floating btn-large teal darken-3">
+            <a class="btn-floating btn-large indigo darken-4">
               <i class="material-icons">menu</i>
             </a>
             <ul>
-              <li><a class="btn-floating teal lighten-3" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
-              <li><a class="btn-floating teal darken-3" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
-              <li><a class="btn-floating teal lighten-3" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
-              <li><a class="btn-floating teal darken-3" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
-              <li><a class="btn-floating teal lighten-3" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
-              <li><a class="btn-floating teal darken-3" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
+              <li><a class="btn-floating indigo darken-4" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
+              <li><a class="btn-floating indigo darken-4" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
+              <li><a class="btn-floating indigo darken-4" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+              <li><a class="btn-floating indigo darken-4" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
+              <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
+              <li><a class="btn-floating indigo darken-4" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
             </ul>
           </div>
             <section id="new-post-form">
               <form action="/wiki" method="POST" id="new-form">
                 <!-- <label for="wiki[title]">POST Title:</label><br> -->
               <div class="input-field col s12">
-                  <input type="text" name="wiki[title]"><br>
+                  <input id="title-input-field" type="text" name="wiki[title]"><br>
                   <label for="title">title</label>
               </div>
               <div class="input-field col s12">
@@ -62,18 +71,17 @@
                 </select>
               </div>
               <div class="input-field col s12">
-                <input type="text" name="wiki[date_created]"><br>
-                <label for="date_created">date created</label>
-              </div>
-              <div class="input-field col s12">
                 <input type="text" name="wiki[content]"><br>
                 <label for="content">content</label>
               </div>
-              <input class="teal darken-3" type="submit" value="add new post">
-            </form>
+              <!-- <div> -->
+                <!-- <form action="/wiki/<= wiki.id %>/like?_method=PUT" method="POST"> -->
+                  <input id="new-post-submit-button" class="indigo darken-4 white-text" type="submit" value="add new post">
+                </form>
+              <!-- </div> -->
+            <!-- </form> -->
           </section>
-
-<!-- Below is the ending div for the row -->
+<!-- Belowis the ending div for the row -->
       </div>
     </div>
   </body>

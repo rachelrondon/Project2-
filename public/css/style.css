@@ -191,11 +191,20 @@ li {
 }
 
 #the-edit-button {
-  padding-left:15px;
-  padding-top:100px;
+  padding-left:55px;
+  padding-top:160px;
 }
 
 #show-card-panel {
   padding-top: 50px;
   text-align: center;
 }
+
+/*select {
+  color:indigo darken-4;
+}*/
+
+/*#pitch-title {
+  font-size: 50px;
+  padding-top: 40px;
+}*/

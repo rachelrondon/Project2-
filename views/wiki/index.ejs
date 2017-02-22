@@ -15,42 +15,58 @@
   <body>
     <nav>
       <div class="nav-wrapper indigo darken-4">
+        <div class="col s12 m4 l2">
       <!-- <ul class="left hide-on-med-and-down">
           <li><a class="btn-floating indigo darken-4" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
       </ul> -->
-      <ul class="right hide-on-med-and-down">
-        <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
-        <li><a class="btn-floating indigo darken-4" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
-        <li><a class="btn-floating indigo darken-4" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
-        <li><a class="btn-floating indigo darken-4" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
-        <li><a class="btn-floating indigo darken-4" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
-      </ul>
+          <ul class="center hide-on-med-and-down">
+            <a href="/wiki" class="left hide-on-med-and-down" class="brand-logo">PITCH</a>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
+          </ul>
+        </div>
       </div>
     </nav>
+<!--Search bar!  -->
     <div class="hide-on-small-only">
-      <form action="" id="search-form">
+      <form action="wiki/search" id="search-form">
         <div class="input-field">
-          <input id="search" type="search" required placeholder="search bar">
+          <input name="search" id="search" type="search" required placeholder="search bar">
           <label id="search-icon" class="label-icon" for="search"><i class="material-icons">search</i></label>
           <i id="close-icon" class="material-icons">close</i>
+          <button type="submit">ENTER</button>
         </div>
       </form>
     </div>
-    <!-- <div id="left-column indigo lighten-4">
-          <ul id="dropdown1" class="dropdown-content">
-            <li><a href="/wiki/tech/show">tech</a></li>
-            <li class="divider"></li>
-            <li><a href="/wiki/travel/show">travel</a></li>
-            <li class="divider"></li>
-            <li><a href="/wiki/style/show">style</a></li>
-            <li class="divider indigo lighten-4"></li>
-            <li><a href="/wiki/food/show">food</a></li>
+
+    <div id="left-column indigo lighten-4">
+          <ul class="collapsible popout" data-collapsible="accordin">
+            <li>
+              <div class="collapsible-header indigo lighten-5"><span class="new badge indigo darken-4">1</span><i class="material-icons">code</i>TECH</div>
+              <div class="collapsible-body"><span> Pitch the lastest start-ups, tech trends, or tech podcasts!</span></div>
+            </li>
+
+            <li>
+              <div class="collapsible-header"><span class="new badge indigo darken-4">4</span><i class="material-icons">receipt</i>FOOD</div>
+              <div class="collapsible-body"><span> Pitch the next big hot spot, div bar, or savory dish!</span></div>
+            </li>
+
+            <li>
+              <div class="collapsible-header indigo lighten-5"><span class="new badge indigo darken-4">3</span><i class="material-icons">my_location</i>TRAVEL</div>
+              <div class="collapsible-body"><span> Pitch the hidden local gems or destination locations of 2017!</span></div>
+            </li>
+
+            <li>
+              <div class="collapsible-header"><span class="new badge indigo darken-4">1</span><i class="material-icons">shopping_basket</i>STYLE</div>
+              <div class="collapsible-body"><span> Pitch the styles before they became a trend or the trendsetters before they become a part of the in-crowd!</span></div>
+            </li>
+
+
           </ul>
-        <ul class="left hide-on-med-and-down">
-          <li><a class="dropdown-button indigo" href="#!" data-activates="dropdown1">CATEGORIES<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
-    </div> -->
-    <!-- <div class="container"> -->
+        </div>
       <div class="row" id="index-box">
         <div class="col s12 m4 l2">
           <!-- <h1>PITCH!</h1> -->
@@ -74,17 +90,17 @@
             <div class="card-panel indigo lighten-5">
             <div class="card-content">
 
-                <p>Title:<%= wiki.title %></p>
+                <p>Title: <%= wiki.title %></p>
             </div>
             <div class="date-created">
               <% console.log(typeof `${wiki.date_created}`) %>
-              <p>Date Created:<%= `${wiki.date_created}`.slice(0,10) %></p>
+              <p>Date Created: <%= `${wiki.date_created}`.slice(0,10) %></p>
             </div>
-                <p>Category:<%= wiki.category %></p>
-                <p>Content:<%= wiki.content %></p>
-                <!-- <p> Date Created:<%= wiki.date_created %></p> -->
-                <!-- <p> Date/Time Updated:<%= wiki.date_updated %></p> -->
-                <<i class="material-icons indigo lighten-3">grade</i><p><$ wiki.likes %></p>
+                <p>Category: <%= wiki.category %></p>
+                <p>Content: <%= wiki.content %></p>
+
+                <i class="material-icons indigo lighten-3">grade</i>
+                <!-- <p><$ wiki.likes %></p> -->
                 <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons">mode_edit</i></a>
               <!-- <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons">mode_edit</i></a> -->
           </div>
