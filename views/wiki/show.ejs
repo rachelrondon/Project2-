@@ -15,34 +15,32 @@
     <nav>
       <div class="nav-wrapper indigo darken-4">
         <ul class="center hide-on-med-and-down">
-          <a href="/wiki" class="left hide-on-med-and-down" class="brand-logo">PITCH</a>
-          <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
-          <li><a class="btn-floating indigo darken-4" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
-          <li><a class="btn-floating indigo darken-4" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
-          <li><a class="btn-floating indigo darken-4" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
-          <li><a class="btn-floating indigo darken-4" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
+            <a href="/wiki" class="left hide-on-med-and-down" class="brand-logo">PITCH</a>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
         </ul>
-        </div>
-      </nav>
-
+      </div>
+    </nav>
     <div class="col s12 m4 l8">
-        <div id="top-categories">
-            <div class="fixed-action-btn horizontal click-to-toggle">
-              <a class="btn-floating btn-large indigo darken-4">
-                <i class="material-icons">menu</i>
-              </a>
-              <ul>
-                <li><a class="btn-floating indigo darken-4" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
-                <li><a class="btn-floating indigo lighten-3" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
-                <li><a class="btn-floating indigo darken-4" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
-                <li><a class="btn-floating indigo lighten-3" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
-                <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
-                <li><a class="btn-floating indigo lighten-3" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
-              </ul>
-            </div>
+      <div id="top-categories">
+        <div class="fixed-action-btn horizontal click-to-toggle">
+          <a class="btn-floating btn-large indigo darken-4">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/food/show"><i class="material-icons">receipt</i></a></li>
+            <li><a class="btn-floating indigo lighten-3" href="/wiki/style/show"><i class="material-icons">shopping_basket</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/travel/show"><i class="material-icons">my_location</i></a></li>
+            <li><a class="btn-floating indigo lighten-3" href="/wiki/tech/show"><i class="material-icons">code</i></a></li>
+            <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
+            <li><a class="btn-floating indigo lighten-3" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
+          </ul>
         </div>
+      </div>
     </div>
-
     <div class="col s12 m4 l8">
       <% wiki.forEach(wiki => { %>
         <div id="show-card-panel" class="card-panel indigo lighten-5">
@@ -58,8 +56,7 @@
           <i class="material-icons indigo lighten-3">grade</i>
           <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons indigo lighten-3">mode_edit</i></a>
         </div>
-        <% }) %>
-      </div>
+      <% }) %>
     </div>
   </body>
 </html>
