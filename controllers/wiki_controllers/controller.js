@@ -33,16 +33,17 @@ controller.category = (req, res) => {
 
 // text = req.query.search // = search bar input // search -> req.query.search -> text
 controller.search = (req, res) => {
+  console.log('searching', req.query.search)
   Wiki
-  .search(req.params.search)
-  .then((text) =>{
+  .search(`%${req.query.search}%`)
+  .then((data) =>{
+    console.log(data)
     res.render('wiki/show.ejs', {
-      wiki:text
+      wiki: data
     })
-  });
-  console.log('hallo', req.query)
+    .catch(err => console.log('ERROR:', err));
+  })
 }
-
 
 controller.create = (req, res) => {
   let time = timestamp();

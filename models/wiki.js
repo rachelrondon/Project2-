@@ -9,14 +9,15 @@ Wiki.findByCategory = (category) => {
       WHERE category = $1`, [category]
     );
    }
-   Wiki.search = (text) => {
-     // console.log(text);
-     return db.manyOrNone(`
-       SELECT *
-       FROM wiki
-       WHERE title LIKE $1
-       `, [`%${text}%`])
-     }
+
+Wiki.search = (text) => {
+ console.log('ubsude tge nidek', text);
+ return db.manyOrNone(`
+   SELECT *
+   FROM wiki
+   WHERE title LIKE $1
+   `, [text])
+ }
 
 Wiki.findAll = () => {
   return db.manyOrNone(`SELECT * FROM wiki`);

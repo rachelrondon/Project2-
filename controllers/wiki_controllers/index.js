@@ -7,7 +7,7 @@ router.get('/:id/edit', controller.edit);
 router.get('/', controller.index);
 router.get('/new', controller.new);
 router.get('/:category/show', controller.category);
-router.get('/:search/show', controller.search)
+router.get('/search', controller.search)
 
 router.post('/', controller.create);
 router.put('/:id', controller.update);
