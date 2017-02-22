@@ -14,3 +14,13 @@ Wireframes:
 ![alt tag](Screen Shot 2017-02-22 at 7.32.07 AM.png)
 ![alt tag](Screen Shot 2017-02-22 at 7.32.22 AM.png)
 ![alt tag](Screen Shot 2017-02-22 at 7.32.26 AM.png)
+
+
+Modules:
+Express: Node.js server
+Morgan: Middleware
+Materialize: Templates & CSS attributes
+EJS: Used for Javascript templates
+Path: Connects the server to the public folder which contains the CSS and library folders.
+Method-Override: Put and delete requests
+PG-Promise
