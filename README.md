@@ -21,3 +21,10 @@ Express: Node.js server
 Materialize: Templates & CSS attributes
 EJS: Used for Javascript templates
 Method-Override: Put and delete requests
+
+Future Goals:
+- Search by regular expressions
+- Add like feature
+- Add background image
+- Make sure that the search button is not case-sensitive
+- Re-format the time
