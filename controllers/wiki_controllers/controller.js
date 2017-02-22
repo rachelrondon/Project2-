@@ -33,11 +33,9 @@ controller.category = (req, res) => {
 
 // text = req.query.search // = search bar input // search -> req.query.search -> text
 controller.search = (req, res) => {
-  console.log('searching', req.query.search)
   Wiki
   .search(`%${req.query.search}%`)
   .then((data) =>{
-    console.log(data)
     res.render('wiki/show.ejs', {
       wiki: data
     })
@@ -45,9 +43,14 @@ controller.search = (req, res) => {
   })
 }
 
+// We used
 controller.create = (req, res) => {
-  let time = timestamp();
-  let date_created = time.split(':').join('-')
+  let date_created = new Date()
+  date_created.getHours();
+  date_created.getMinutes();
+  console.log(date_created);
+  // let time = timestamp();
+  // let date_created = time.split(':').join('-')
   Wiki
   .save(req.body.wiki, date_created)
   .then(() => res.redirect('/wiki'))
@@ -56,6 +59,10 @@ controller.create = (req, res) => {
 }
 
 controller.edit = (req, res) => {
+  // let date_created = new Date()
+  // date_created.getHours();
+  // date_created.getMinutes();
+
   Wiki
   .findById(req.params.id)
   .then((data => {

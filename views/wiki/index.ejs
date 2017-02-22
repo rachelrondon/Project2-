@@ -32,8 +32,8 @@
         <div class="input-field">
           <input name="search" id="search" type="text" required placeholder="search bar">
           <label id="search-icon" class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i id="close-icon" class="material-icons">close</i>
-          <button type="submit" id="the-button">ENTER</button>
+          <button class="indigo darken-4 white-text" type="submit" id="the-button">ENTER</button>
+          <!-- <i id="close-icon" class="material-icons">close</i> -->
         </div>
       </form>
     </div>
@@ -89,8 +89,7 @@
                 <p>Title: <%= wiki.title %></p>
             </div>
             <div class="date-created">
-              <% console.log(typeof `${wiki.date_created}`) %>
-              <p>Date Created: <%= `${wiki.date_created}`.slice(0,10) %></p>
+              <p>Date Created: <%= wiki.date_created %></p>
             </div>
                 <p>Category: <%= wiki.category %></p>
                 <p>Content: <%= wiki.content %></p>
