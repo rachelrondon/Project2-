@@ -8,12 +8,12 @@ A user can also search which articles are in the database through the search bar
 The search bar will pull keywords from the title field of each article.
 
 Wireframes:
-![](wireframes/Screen Shot 2017-02-16 at 5.27.34 PM.png)
-![](wireframes/Screen Shot 2017-02-22 at 7.31.49 AM.png)
-![](wireframes/Screen Shot 2017-02-22 at 7.31.56 AM.png)
-![](wireframes/Screen Shot 2017-02-22 at 7.32.07 AM.png)
-![](wireframes/Screen Shot 2017-02-22 at 7.32.22 AM.png)
-![](wireframes/Screen Shot 2017-02-22 at 7.32.26 AM.png)
+![](wireframes/dbdesigner.png)
+![](wireframes/wireframe1.png)
+![](wireframes/wireframe2.png)
+![](wireframes/wireframe3.png)
+![](wireframes/wireframe4.png)
+![](wireframes/wireframe5.png)
 
 
 Modules:
