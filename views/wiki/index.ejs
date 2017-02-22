@@ -12,9 +12,6 @@
     <nav>
       <div class="nav-wrapper indigo darken-4">
         <div class="col s12 m4 l2">
-      <!-- <ul class="left hide-on-med-and-down">
-          <li><a class="btn-floating indigo darken-4" href="/wiki"><i class="material-icons">view_quilt</i></a></li>
-      </ul> -->
           <ul class="center hide-on-med-and-down">
             <a href="/wiki" class="left hide-on-med-and-down" class="brand-logo">PITCH</a>
             <li><a class="btn-floating indigo darken-4" href="/wiki/new"><i class="material-icons">assignment</i></a></li>
@@ -28,12 +25,12 @@
     </nav>
 <!--Search bar!  -->
     <div class="hide-on-small-only">
+      <!--The path for the search bar is defined by wiki/search  -->
       <form action="/wiki/search" id="search-form">
         <div class="input-field">
           <input name="search" id="search" type="text" required placeholder="search bar">
           <label id="search-icon" class="label-icon" for="search"><i class="material-icons">search</i></label>
           <button class="indigo darken-4 white-text" type="submit" id="the-button">ENTER</button>
-          <!-- <i id="close-icon" class="material-icons">close</i> -->
         </div>
       </form>
     </div>
@@ -65,8 +62,6 @@
         </div>
       <div class="row" id="index-box">
         <div class="col s12 m4 l2">
-          <!-- <h1>PITCH!</h1> -->
-              <!-- <p>Top Ideas:</p> -->
                 <div class="fixed-action-btn horizontal click-to-toggle">
                   <a class="btn-floating btn-large indigo darken-4">
                     <i class="material-icons">menu</i>
@@ -95,9 +90,7 @@
                 <p>Content: <%= wiki.content %></p>
 
                 <i class="material-icons indigo lighten-3">grade</i>
-                <!-- <p><$ wiki.likes %></p> -->
                 <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons">mode_edit</i></a>
-              <!-- <a class="white-text" href="/wiki/<%= wiki.id %>/edit"><i class="material-icons">mode_edit</i></a> -->
           </div>
           <% }) %>
         </div>

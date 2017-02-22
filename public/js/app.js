@@ -9,25 +9,4 @@ $(document).ready(function() {
     const $theButton = $('#the-button')
     const $newPostButton = $('#new-post-submit-button');
 
-    const body = document.querySelector('body')
-    console.log('hello', body)
-
-$theButton.on('click', (e)=> {
-  console.log('hello')
-})
-  // $.ajax({
-  //   url: `http://localhost:3000/wiki/ + ${results}`,
-  //   dataType: 'json',
-  //   method:'GET',
-  // })
-  // .then((response) => {
-  //   console.log(resonse)
-  // })
-  // .catch((err) => {
-  //   console.log('ERROR')
-  // })
-
-
-console.log('hi')
-
 });

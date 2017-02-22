@@ -10,22 +10,21 @@ Wiki.findByCategory = (category) => {
     );
    }
 
-Wiki.search = (text) => {
- console.log('ubsude tge nidek', text);
+// For the search bar, I am only pullling information from the title of each article.
+// I made the req.query.search dynamic under the controllers page instead of in sql.//
+Wiki.search = (data) => {
  return db.manyOrNone(`
    SELECT *
    FROM wiki
    WHERE title LIKE $1
-   `, [text])
+   `, [data])
  }
 
 Wiki.findAll = () => {
   return db.manyOrNone(`SELECT * FROM wiki`);
 }
 
-//for the edit function//
 Wiki.findById = (id) => {
-  // console.log('*************************model', id)
   return db.one(`
     SELECT * FROM wiki
     WHERE id = $1`, [id]
@@ -41,10 +40,6 @@ Wiki.save = (wiki, date_created) => {
     [wiki.title, wiki.content, wiki.category, date_created]
   );
 };
-
-// This is for the edit page.
-// An article will be selected by their id
-// We will need to provide the specific information that will need to be updated //
 
 Wiki.update = (wiki, id) => {
   return db.query(
@@ -64,15 +59,5 @@ Wiki.update = (wiki, id) => {
 Wiki.destroy = (id) => {
   return db.query('DELETE FROM wiki WHERE id = $1', [id]);
 }
-
-// Wiki.like = (id) => {
-//   return db.none(`
-//     UPDATE wiki
-//     SET likes = likes + 1
-//     WHERE id = $1`,
-//     [id]
-//   );
-// }
-
 
 module.exports = Wiki;

@@ -2,9 +2,8 @@ const Wiki          = require('../../models/wiki');
 let controller      = {};
 const timestamp     = require('time-stamp');
 
+// On the index page, a findAll() called which renders all of the data from the database //
 controller.index = (req, res) => {
-  // res.render('/wiki/index.ejs')
-  console.log('index rendering with params', req.params)
   Wiki
   .findAll()
   .then((data) => {
@@ -15,11 +14,14 @@ controller.index = (req, res) => {
   });
 };
 
+// Here the wiki/new page is rendered. //
 controller.new = (req, res) => {
   res.render('wiki/new.ejs');
-// this tells the computer to look into this folder
 }
 
+// This is how each post is sorted by category.
+// I modeled this after the controller.id search //
+// Here we are giving the server the parameter of the category that is chosen through the dropdown //
 controller.category = (req, res) => {
   Wiki
   .findByCategory(req.params.category)
@@ -31,7 +33,9 @@ controller.category = (req, res) => {
   }))
 }
 
-// text = req.query.search // = search bar input // search -> req.query.search -> text
+// For the search, I am pulling information from the search bar and applying a re.query.search.
+// This then turns this information into text that is referenced in the database.
+// search -> req.query.search -> text
 controller.search = (req, res) => {
   Wiki
   .search(`%${req.query.search}%`)
@@ -43,25 +47,22 @@ controller.search = (req, res) => {
   })
 }
 
-// We used
+// I used new Date() to get the date/time for each post //
 controller.create = (req, res) => {
   let date_created = new Date()
   date_created.getHours();
   date_created.getMinutes();
   console.log(date_created);
-  // let time = timestamp();
-  // let date_created = time.split(':').join('-')
+
   Wiki
   .save(req.body.wiki, date_created)
   .then(() => res.redirect('/wiki'))
-// this tells the computer to go to this URL
+// Redirect - tells the computer to go to this URL
   .catch(err => console.log('ERROR', err));
 }
 
+// This is how each post is edited //
 controller.edit = (req, res) => {
-  // let date_created = new Date()
-  // date_created.getHours();
-  // date_created.getMinutes();
 
   Wiki
   .findById(req.params.id)
@@ -79,6 +80,7 @@ controller.update = (req, res) => {
   .catch(err => console.log('ERROR:', err));
 }
 
+// This is how each post is deleted //
 controller.destroy = (req, res) => {
   Wiki
   .destroy(req.params.id)
@@ -91,19 +93,5 @@ controller.destroy = (req, res) => {
     .send(err);
   });
 }
-
-controller.like = (req, res) => {
-  Wiki
-    .like(req.params.id)
-    .then(() => {
-      if (req.query.show) {
-        res.redirect('/wiki')
-      } else {
-        res.redirect('/wiki')
-      }
-  })
-    .catch(err => console.log('ERROR:', err));
-}
-
 
 module.exports = controller;

@@ -1,6 +1,5 @@
 #index-body {
   display:flex;
-  /*flex-direction: column;*/
   justify-content: space-around;
 }
 
@@ -80,20 +79,6 @@ ul {
 #style-page-heading {
   background-color: black;
 }
-
-/*.style-heading {
-  background-color:black;
-  width:100%;
-  height:1px;
-  text-align:center;
-}*/
-/*
-.style-footer {
-  background-color:black;
-  width:100%;
-  height:1px;
-  text-align:center;
-}*/
 
 .page-name {
   text-align: center;
@@ -199,12 +184,3 @@ li {
   padding-top: 50px;
   text-align: center;
 }
-
-/*select {
-  color:indigo darken-4;
-}*/
-
-/*#pitch-title {
-  font-size: 50px;
-  padding-top: 40px;
-}*/
