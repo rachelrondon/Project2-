@@ -16,7 +16,7 @@ Wireframes:
 ![](wireframes/wireframe5.png)
 
 
-Modules:
+Technical Details:
 Express: Node.js server
 Materialize: Templates & CSS attributes
 EJS: Used for Javascript templates
