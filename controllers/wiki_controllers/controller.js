@@ -1,6 +1,5 @@
 const Wiki          = require('../../models/wiki');
 let controller      = {};
-const timestamp     = require('time-stamp');
 
 // On the index page, a findAll() called which renders all of the data from the database //
 controller.index = (req, res) => {
