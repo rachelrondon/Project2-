@@ -22,7 +22,7 @@ img {
 }
 
 .nav-wrapper {
-  /*background-color: */
+  position:absolute;
   padding-left: 425px;
   font-size: 20px;
   color:black;
